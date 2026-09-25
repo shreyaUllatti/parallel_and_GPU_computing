@@ -3,7 +3,7 @@
 ## Experiments
 ## Matrix Multiplication using Sequential Processing, OpenMP and MPI
 
-## 1.INTRODUCTION :
+## INTRODUCTION :
 This project demonstrates different approaches for performing large-scale matrix multiplication using parallel and distributed computing techniques.
 
 The same matrix multiplication problem is implemented using:
@@ -14,10 +14,10 @@ MPI for distributed-memory processing
 
 The purpose of the project is to understand how parallel and distributed computing can improve the execution of computationally intensive problems.
 
-## 2. AIM:
+## AIM:
 To implement matrix multiplication using sequential processing, OpenMP and MPI, and study the difference in execution and parallel processing between these approaches.
 
-## 3.PROBLEM STATEMENT :
+## PROBLEM STATEMENT :
 
 Matrix multiplication is a computationally intensive operation, especially when the matrix size is large.
 For two matrices A and B, the resulting matrix C is calculated as:
