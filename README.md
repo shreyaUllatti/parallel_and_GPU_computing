@@ -78,18 +78,22 @@ OpenMP is used to parallelize the matrix multiplication on the CPU.
 
 The outer loop is parallelized so that different threads can work on different rows of the matrix.
 The OpenMP implementation uses:
+
 #pragma omp parallel for
 Compilation
 gcc -fopenmp openmp.c -o openmp
+
 Set Number of Threads
  to use 8 threads:
 export OMP_NUM_THREADS=8
+
 Execute
 ./openmp
+
 Verify Number of Threads
 echo $OMP_NUM_THREADS
-Verification
 
+Verification
 The result should still be:C[0][0] = 4000.00
 The main purpose of OpenMP is to reduce the execution time by allowing multiple CPU threads to perform calculations simultaneously.
 
