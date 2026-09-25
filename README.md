@@ -90,3 +90,27 @@ Parallel-and-GPU-Computing/
 ├── MPI.md
 └── CUDA.md
 
+## Sequential Implementation
+
+The sequential version uses three nested loops for matrix multiplication.
+
+The general logic is:
+
+for each row i
+    for each column j
+        for each k
+            C[i][j] = C[i][j] + A[i][k] × B[k][j]
+
+Since there is no parallel processing, the operations are executed sequentially by the CPU.
+
+Compilation
+gcc sequential.c -o sequential
+Execution
+./sequential
+Verification
+
+The result is verified using:
+
+C[0][0] = 4000.00
+
+The sequential execution time is used as the baseline for comparison with the parallel implementations.
