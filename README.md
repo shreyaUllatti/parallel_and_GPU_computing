@@ -18,34 +18,24 @@ The purpose of the project is to understand how parallel and distributed computi
 To implement matrix multiplication using sequential processing, OpenMP and MPI, and study the difference in execution and parallel processing between these approaches.
 
 ## 3.PROBLEM STATEMENT :
-Problem Statement
 
 Matrix multiplication is a computationally intensive operation, especially when the matrix size is large.
-
 For two matrices A and B, the resulting matrix C is calculated as:
-
 C = A × B
-
 Each element of the result matrix is calculated as:
 
 C[i][j] = Σ A[i][k] × B[k][j]
 
 For this project, matrices of size:
-
-4000 × 4000
-
-are used.
+4000 × 4000 are used.
 
 All elements of matrices A and B are initialized to:
-
 1.0
 
 Therefore, every element of the resulting matrix should be:
-
 4000.00
 
 For verification:
-
 C[0][0] = 4000.00
 
 ### 1. Sequential Matrix Multiplication
