@@ -80,7 +80,9 @@ The outer loop is parallelized so that different threads can work on different r
 The OpenMP implementation uses:
 
 #pragma omp parallel for
+
 Compilation
+
 gcc -fopenmp openmp.c -o openmp
 
 Set Number of Threads
