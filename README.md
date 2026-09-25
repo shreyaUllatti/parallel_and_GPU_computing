@@ -81,6 +81,7 @@ The OpenMP implementation uses:
 
 #pragma omp parallel for
 
+
 Compilation
 
 gcc -fopenmp openmp.c -o openmp
