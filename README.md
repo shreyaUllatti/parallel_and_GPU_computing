@@ -22,6 +22,10 @@ To implement matrix multiplication using sequential processing, OpenMP and MPI, 
 Matrix multiplication is a computationally intensive operation, especially when the matrix size is large.
 For two matrices A and B, the resulting matrix C is calculated as:
 C = A × B
+
+- Matrix A: 4000 × 4000
+- Matrix B: 4000 × 4000
+  
 Each element of the result matrix is calculated as:
 
 C[i][j] = Σ A[i][k] × B[k][j]
@@ -64,15 +68,6 @@ A GPU-based implementation using CUDA for parallel matrix multiplication.
 
 [View CUDA Experiment](./CUDA.md)
 
-## Problem Definition
-
-The matrix multiplication experiment uses:
-
-- Matrix A: 4000 × 4000
-- Matrix B: 4000 × 4000
-- Matrix C: A × B
-- Matrix elements: 1.0
-- Expected verification: C[0][0] = 4000.00
 
 ## Technologies Used
 
