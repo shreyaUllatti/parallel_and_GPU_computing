@@ -1,0 +1,5 @@
+model,seconds,speedup_x,measurement_note
+Sequential CPU,244.12,1.0,Single-core baseline
+OpenMP (8 threads),30.83,7.9,Shared-memory CPU
+MPI (4 machines),92.98,2.6,Distributed-memory reference run
+CUDA GPU,0.165,1479.5,Total GPU phase including transfers

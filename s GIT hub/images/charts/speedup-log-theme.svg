@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Speedup relative to sequential matrix multiplication</title>
+  <desc id="desc">Horizontal bars on a logarithmic speedup axis. Sequential 1 times, OpenMP 7.9 times, MPI 2.6 times, CUDA 1479.5 times.</desc>
+  <rect width="1400" height="760" rx="22" fill="#101820"/>
+  <text x="76" y="82" fill="#f4f7fa" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">SPEEDUP RELATIVE TO SEQUENTIAL</text>
+  <text x="78" y="124" fill="#9db0be" font-family="Segoe UI, Arial, sans-serif" font-size="18">Reference speedup values · logarithmic scale · baseline = 1×</text>
+  <rect x="70" y="166" width="1260" height="526" rx="16" fill="#182832"/>
+  <g stroke="#314450" stroke-width="1">
+    <line x1="390" y1="218" x2="390" y2="610"/><line x1="600" y1="218" x2="600" y2="610"/>
+    <line x1="810" y1="218" x2="810" y2="610"/><line x1="1020" y1="218" x2="1020" y2="610"/>
+    <line x1="1230" y1="218" x2="1230" y2="610"/>
+  </g>
+  <g fill="#aebfc9" font-family="Segoe UI, Arial, sans-serif" font-size="16" text-anchor="middle">
+    <text x="390" y="640">1×</text><text x="600" y="640">10×</text><text x="810" y="640">100×</text><text x="1020" y="640">1,000×</text><text x="1230" y="640">10,000×</text>
+  </g>
+  <g fill="#edf3f6" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">
+    <text x="108" y="273">Sequential</text><text x="108" y="371">OpenMP</text><text x="108" y="469">MPI</text><text x="108" y="567">CUDA</text>
+  </g>
+  <rect x="390" y="244" width="4" height="42" rx="2" fill="#ff746c"/>
+  <rect x="390" y="342" width="189" height="42" rx="8" fill="#54d6a0"/>
+  <rect x="390" y="440" width="87" height="42" rx="8" fill="#f4c95d"/>
+  <rect x="390" y="538" width="665" height="42" rx="8" fill="#58b4f8"/>
+  <g fill="#f4f7fa" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="410" y="273">1.0× baseline</text><text x="595" y="371">7.9×</text><text x="493" y="469">2.6×</text><text x="1071" y="567">1,479.5×</text>
+  </g>
+  <text x="78" y="674" fill="#91a5b3" font-family="Segoe UI, Arial, sans-serif" font-size="14">Speedups are the values reported with the reference measurements and are not a controlled cross-hardware comparison.</text>
+</svg>
