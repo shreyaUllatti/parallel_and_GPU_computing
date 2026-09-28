@@ -65,11 +65,11 @@ Hence, the expected verification value is:
 | Matrix Size | 4000 × 4000 |
 | Optimization | `-O2` |
 
-### WSL Status
+### WSL2 Status
 
 The experiment was performed using Ubuntu on WSL2.
 
-![WSL Status](screenshots/01_wsl_status.png.png)
+![WSL2 Status](screenshots/01_wsl_status.png)
 
 ---
 
@@ -143,13 +143,13 @@ int main()
 }
 ```
 
-### Source Code Screenshot 1
+### Source Code Screenshot – Part 1
 
-![Source Code Part 1](screenshots/04_source_code_1.png.png)
+![Source Code Part 1](screenshots/04_source_code_1.png)
 
-### Source Code Screenshot 2
+### Source Code Screenshot – Part 2
 
-![Source Code Part 2](screenshots/05_source_code_2.png.png)
+![Source Code Part 2](screenshots/05_source_code_2.png)
 
 ---
 
@@ -167,7 +167,7 @@ The directory was created using:
 mkdir -p ~/parallel_lab/sequential
 ```
 
-Then:
+Then the directory was opened using:
 
 ```bash
 cd ~/parallel_lab/sequential
@@ -187,7 +187,7 @@ Output:
 
 ### Directory Creation Screenshot
 
-![Directory Creation](screenshots/02_create_directory.png.png)
+![Directory Creation](screenshots/02_create_directory.png)
 
 ---
 
@@ -207,7 +207,7 @@ gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
 
 ### GCC Version Screenshot
 
-![GCC Version](screenshots/03_gcc_version.png.png)
+![GCC Version](screenshots/03_gcc_version.png)
 
 ---
 
@@ -223,7 +223,7 @@ No compilation errors were reported.
 
 ### Compilation Screenshot
 
-![Compilation](screenshots/06_compile.png.png)
+![Compilation](screenshots/06_compile.png)
 
 ---
 
@@ -244,7 +244,7 @@ matrix_sequential.c
 
 ### Executable Screenshot
 
-![Executable](screenshots/07_executable.png.png)
+![Executable](screenshots/07_executable.png)
 
 ---
 
@@ -273,9 +273,9 @@ Execution Time = 97.230285 seconds
 Verification C[0][0] = 4000.00
 ```
 
-### Final Execution Result
+### Final Execution Result Screenshot
 
-![Final Result](screenshots/08_result.png.png)
+![Final Result](screenshots/08_result.png)
 
 ### Result Table
 
