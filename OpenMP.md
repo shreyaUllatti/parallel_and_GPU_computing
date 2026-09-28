@@ -210,7 +210,7 @@ Here:
 
 No compilation errors were reported.
 
-![OpenMP Result](06_openmp_result.png)
+![OpenMP Compilation and Execution](screenshots/openmp/06_openmp_result.png)
 
 
 ---
@@ -257,7 +257,7 @@ Number of Threads Used = 8
 Execution Time = 55.536384 seconds
 Verification C[0][0] = 4000.00
 
-![OpenMP Result](06_openmp_result.png)
+![OpenMP Compilation and Execution](screenshots/openmp/06_openmp_result.png)
 
 ### Result Table
 
