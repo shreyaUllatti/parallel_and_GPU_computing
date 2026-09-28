@@ -212,7 +212,8 @@ No compilation errors were reported.
 
 ### Compilation Screenshot
 
-![Compilation](screenshots/openmp/06_openmp_compile_and_result.png)
+![OpenMP Compilation](screenshots/openmp/06_openmp_result.png)
+
 
 ---
 
@@ -229,11 +230,6 @@ matrix_openmp.c
 
 This confirmed that the program was compiled successfully.
 
-### Executable Screenshot
-
-![Executable](screenshots/openmp/06_openmp_compile_and_result.png)
-
----
 
 ## 10. Execution
 
@@ -265,7 +261,7 @@ Verification C[0][0] = 4000.00
 
 ### Final Execution Result Screenshot
 
-![Final Result](screenshots/openmp/06_openmp_compile_and_result.png)
+![OpenMP Final Result](screenshots/openmp/06_openmp_result.png)
 
 ### Result Table
 
