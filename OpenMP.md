@@ -74,15 +74,7 @@ Hence, the expected verification value is:
 The OpenMP matrix multiplication program was implemented using C.
 
 The OpenMP library was included using:
-
-#include <omp.h>
-
-The matrix multiplication was parallelized using:
-
-#pragma omp parallel for private(j, k)
-
-The complete source code is:
-
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
@@ -147,7 +139,7 @@ int main()
 
     return 0;
 }
-
+```
 ### Source Code Screenshot – Part 1
 
 ![Source Code Part 1](screenshots/openmp/04_openmp_source_code_1.png)
