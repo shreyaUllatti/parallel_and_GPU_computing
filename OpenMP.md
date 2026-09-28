@@ -69,12 +69,7 @@ Hence, the expected verification value is:
 | Number of Threads | 8 |
 | Optimization | `-O2` |
 
-### CPU Configuration
-
-The number of available CPU processors was checked using:
-
-```bash
-nproc
+---
 
 ## 5. Source Code
 
@@ -209,25 +204,23 @@ Output:
 
 ---
 
-## 7. Creating the OpenMP Source File
+## 7. Checking GCC
 
-The OpenMP source file was created using:
+The GCC compiler version was checked using:
 
 ```bash
-nano matrix_openmp.c
+gcc --version
 ```
 
-The C program was entered into the file and saved.
-
-The source file was named:
+The installed compiler was:
 
 ```text
-matrix_openmp.c
+gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
 ```
 
-### Source File Screenshot
+### GCC Version Screenshot
 
-![Source File](screenshots/openmp/03_source_code_1.png)
+![GCC Version](screenshots/openmp/02_gcc_version.png)
 
 ---
 
@@ -347,29 +340,9 @@ Therefore, the matrix multiplication result is correct.
 
 ---
 
-## 13. OpenMP Parallelization
+## 13. Complexity
 
-The following OpenMP directive was used:
-
-```c
-#pragma omp parallel for private(j, k)
-```
-
-The `parallel for` directive distributes the iterations of the outer loop among multiple OpenMP threads.
-
-In the sequential implementation, the rows of the result matrix are processed one after another.
-
-In the OpenMP implementation, different rows can be processed simultaneously by different CPU threads.
-
-The experiment was executed using 8 OpenMP threads.
-
-This parallel processing reduces the execution time compared with the sequential implementation.
-
----
-
-## 14. Complexity
-
-For an N × N matrix multiplication, the algorithm uses three nested loops.
+For an N × N matrix multiplication, the OpenMP algorithm uses three nested loops.
 
 Therefore, the time complexity is:
 
@@ -380,6 +353,24 @@ O(N^3)
 For N = 4000, a very large number of multiplication and addition operations are required.
 
 OpenMP does not change the algorithmic complexity. Instead, it improves the practical execution time by executing independent loop iterations in parallel.
+
+---
+
+## 14. Observation
+
+The OpenMP implementation executes matrix multiplication using multiple CPU threads.
+
+The `parallel for` directive distributes the iterations of the outer loop among the available OpenMP threads.
+
+For the 4000 × 4000 matrix:
+
+- Number of OpenMP threads = **8**
+- OpenMP execution time = **55.536384 seconds**
+- Verification value = **4000.00**
+
+The OpenMP implementation required less execution time than the sequential implementation.
+
+The sequential implementation took **97.230285 seconds**, while the OpenMP implementation took **55.536384 seconds**.
 
 ---
 
@@ -420,27 +411,7 @@ Therefore, the OpenMP implementation achieved approximately **1.75× speedup** c
 
 ---
 
-## 16. Observation
-
-The sequential implementation executes all matrix multiplication operations using the CPU without parallel processing.
-
-The OpenMP implementation divides the computation among multiple CPU threads.
-
-For the 4000 × 4000 matrix:
-
-- Sequential execution time = **97.230285 seconds**
-- OpenMP execution time = **55.536384 seconds**
-- Number of OpenMP threads = **8**
-- Verification value = **4000.00**
-- Approximate speedup = **1.75×**
-
-The OpenMP implementation therefore required less execution time than the sequential implementation.
-
-This demonstrates the benefit of parallel CPU processing for computationally intensive matrix multiplication.
-
----
-
-## 17. Conclusion
+## 16. Conclusion
 
 The OpenMP matrix multiplication program was successfully implemented and executed using C, GCC and OpenMP on Ubuntu through WSL2.
 
