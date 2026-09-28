@@ -1,88 +1,77 @@
 # Part B - OpenMP Matrix Multiplication
 
-## 1. OpenMP Setup
+## 1. Aim
 
-OpenMP and OpenSSH were configured on the required Ubuntu systems for distributed matrix multiplication.
+To implement matrix multiplication using OpenMP parallel processing and measure the execution time using multiple CPU threads.
 
-## 2. OpenMP Matrix Multiplication Program
+---
 
-The program uses a matrix size of 4000 × 4000.
+## 2. Objective
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <omp.h>
+The objective of this experiment is to:
 
-#define N 4000
+- Implement matrix multiplication using C and OpenMP.
+- Execute the computation in parallel on the CPU.
+- Use multiple OpenMP threads.
+- Measure the execution time.
+- Verify the correctness of the result.
+- Compare the OpenMP implementation with the sequential implementation.
 
-int main()
-{
-    int i, j, k;
-    double *A, *B, *C;
-    double start, end;
+---
 
-    A = (double *)malloc(N * N * sizeof(double));
-    B = (double *)malloc(N * N * sizeof(double));
-    C = (double *)malloc(N * N * sizeof(double));
+## 3. Problem Statement
 
-    if (A == NULL || B == NULL || C == NULL)
-    {
-        printf("Memory allocation failed\n");
-        return 1;
-    }
+Matrix multiplication is a computationally intensive operation.
 
-    for (i = 0; i < N; i++)
-    {
-        for (j = 0; j < N; j++)
-        {
-            A[i * N + j] = 1.0;
-            B[i * N + j] = 1.0;
-            C[i * N + j] = 0.0;
-        }
-    }
+For two matrices A and B:
 
-    start = omp_get_wtime();
+\[
+C = A \times B
+\]
 
-    #pragma omp parallel for private(j, k)
-    for (i = 0; i < N; i++)
-    {
-        for (j = 0; j < N; j++)
-        {
-            for (k = 0; k < N; k++)
-            {
-                C[i * N + j] +=
-                    A[i * N + k] *
-                    B[k * N + j];
-            }
-        }
-    }
+Each element of matrix C is calculated as:
 
-    end = omp_get_wtime();
+\[
+C[i][j] = \sum_{k=0}^{N-1} A[i][k] \times B[k][j]
+\]
 
-    printf("OpenMP Matrix Multiplication Completed\n");
-    printf("Matrix Size = %d x %d\n", N, N);
-    printf("Number of Threads Used = %d\n", omp_get_max_threads());
-    printf("Execution Time = %f seconds\n", end - start);
-    printf("Verification C[0][0] = %.2f\n", C[0]);
+For this experiment:
 
-    free(A);
-    free(B);
-    free(C);
+- Matrix A = 4000 × 4000
+- Matrix B = 4000 × 4000
+- Matrix C = 4000 × 4000
+- All elements of A = 1.0
+- All elements of B = 1.0
+- Number of OpenMP threads = 8
 
-    return 0;
-}
-```
+Therefore:
 
-## 3. Working and Output
+\[
+C[i][j] = 4000
+\]
 
-The OpenMP matrix multiplication program was compiled and executed successfully using 8 threads.
+Hence, the expected verification value is:
 
-The program performed multiplication of two 4000 × 4000 matrices and verified the result successfully.
+`C[0][0] = 4000.00`
 
-<img width="762" height="294" alt="openmp" src="https://github.com/user-attachments/assets/553569cd-33ad-4bb8-90e2-89ffd1049572" />
+---
 
-## 4. Result
+## 4. Environment
 
-The OpenMP implementation completed successfully with an execution time of **40.545825 seconds**.
+| Component | Configuration |
+|---|---|
+| Operating System | Ubuntu on WSL2 |
+| Compiler | GCC |
+| GCC Version | 15.2.0 |
+| Language | C |
+| Parallel Framework | OpenMP |
+| Matrix Size | 4000 × 4000 |
+| Number of Threads | 8 |
+| Optimization | `-O2` |
 
-The verification value was **C[0][0] = 4000.00**, confirming the correctness of the matrix multiplication.
+### CPU Configuration
+
+The number of available CPU processors was checked using:
+
+```bash
+nproc
