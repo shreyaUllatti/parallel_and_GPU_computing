@@ -65,9 +65,17 @@ Hence, the expected verification value is:
 | Matrix Size | 4000 × 4000 |
 | Optimization | `-O2` |
 
+### WSL Status
+
+The experiment was performed using Ubuntu on WSL2.
+
+![WSL Status](screenshots/01_wsl_status.png.png)
+
 ---
 
 ## 5. Source Code
+
+The sequential matrix multiplication program was implemented using C.
 
 ```c
 #include <stdio.h>
@@ -135,6 +143,14 @@ int main()
 }
 ```
 
+### Source Code Screenshot 1
+
+![Source Code Part 1](screenshots/04_source_code_1.png.png)
+
+### Source Code Screenshot 2
+
+![Source Code Part 2](screenshots/05_source_code_2.png.png)
+
 ---
 
 ## 6. Creating the Experiment Directory
@@ -169,6 +185,10 @@ Output:
 /home/shreya/parallel_lab/sequential
 ```
 
+### Directory Creation Screenshot
+
+![Directory Creation](screenshots/02_create_directory.png.png)
+
 ---
 
 ## 7. Checking GCC
@@ -185,6 +205,10 @@ The installed compiler was:
 gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
 ```
 
+### GCC Version Screenshot
+
+![GCC Version](screenshots/03_gcc_version.png.png)
+
 ---
 
 ## 8. Compilation
@@ -196,6 +220,10 @@ gcc -O2 matrix_sequential.c -o matrix_sequential
 ```
 
 No compilation errors were reported.
+
+### Compilation Screenshot
+
+![Compilation](screenshots/06_compile.png.png)
 
 ---
 
@@ -213,6 +241,10 @@ The directory contained:
 matrix_sequential
 matrix_sequential.c
 ```
+
+### Executable Screenshot
+
+![Executable](screenshots/07_executable.png.png)
 
 ---
 
@@ -241,6 +273,10 @@ Execution Time = 97.230285 seconds
 Verification C[0][0] = 4000.00
 ```
 
+### Final Execution Result
+
+![Final Result](screenshots/08_result.png.png)
+
 ### Result Table
 
 | Parameter | Result |
@@ -258,8 +294,7 @@ Verification C[0][0] = 4000.00
 Since every element of matrices A and B is initialized to `1.0`:
 
 \[
-C[i][j] =
-1+1+1+\cdots+1
+C[i][j] = 1+1+1+\cdots+1
 \]
 
 There are 4000 terms, therefore:
@@ -296,7 +331,7 @@ For N = 4000, a very large number of multiplication and addition operations are 
 
 The sequential implementation executes all matrix multiplication operations using the CPU without parallel processing.
 
-Therefore, it requires significantly more execution time for a large matrix.
+Therefore, it requires significant execution time for a large matrix.
 
 The measured execution time was:
 
@@ -318,4 +353,6 @@ The result was verified successfully with:
 
 **C[0][0] = 4000.00**
 
-This sequential implementation provides the baseline for comparing the performance of parallel approaches such as OpenMP, MPI and CUDA.completed successfully with the expected verification value.
+This sequential implementation provides the baseline for comparing the performance of parallel approaches such as OpenMP, MPI and CUDA.
+
+The experiment was completed successfully with the expected verification value.
