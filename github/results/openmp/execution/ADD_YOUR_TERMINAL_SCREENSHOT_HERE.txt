@@ -1,0 +1,1 @@
+Add your actual OpenMP terminal/result screenshot here. Recommended name: openmp_result.png
