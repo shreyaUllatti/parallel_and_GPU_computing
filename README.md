@@ -200,15 +200,15 @@ All four models were executed on the same 4000 × 4000 workload and passed verif
 
 | **Chart** | **Preview** |
 | --------- | ----------- |
-| **Execution time and speedup (combined)** | ![Execution Time and Speedup Chart](images/comparison/execution-time-speedup.png) |
+| **Execution time and speedup (combined)** |![Execution Time and Speedup](screenshots/comparison/execution_time_and_speedup_combined.png) |
 
 | **Chart** | **Preview** |
 | --------- | ----------- |
-| **Execution time only** | ![Matrix Multiplication Execution Time Comparison](images/comparison/execution-time-only.png) |
+| **Execution time only** | ![Execution Time Comparison](screenshots/comparison/execution_time_only.png)|
 
 | **Chart** | **Preview** |
 | --------- | ----------- |
-| **Speedup only** | ![Parallel Speedup Factor](images/comparison/speedup-only.png) |
+| **Speedup only** | ![Speedup Comparison](screenshots/comparison/speedup_only.png) |
 
 ## Discussion:
 
