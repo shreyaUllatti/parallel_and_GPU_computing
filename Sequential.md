@@ -69,7 +69,7 @@ Hence, the expected verification value is:
 
 The experiment was performed using Ubuntu on WSL2.
 
-![WSL2 Status](screenshots/01_wsl_status.png)
+![WSL2 Status](screenshots/sequential/01_wsl_status.png)
 
 ---
 
@@ -145,11 +145,11 @@ int main()
 
 ### Source Code Screenshot – Part 1
 
-![Source Code Part 1](screenshots/04_source_code_1.png)
+![Source Code Part 1](screenshots/sequential/04_source_code_1.png)
 
 ### Source Code Screenshot – Part 2
 
-![Source Code Part 2](screenshots/05_source_code_2.png)
+![Source Code Part 2](screenshots/sequential/05_source_code_2.png)
 
 ---
 
@@ -187,7 +187,7 @@ Output:
 
 ### Directory Creation Screenshot
 
-![Directory Creation](screenshots/02_create_directory.png)
+![Directory Creation](screenshots/sequential/02_create_directory.png)
 
 ---
 
@@ -207,7 +207,7 @@ gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
 
 ### GCC Version Screenshot
 
-![GCC Version](screenshots/03_gcc_version.png)
+![GCC Version](screenshots/sequential/03_gcc_version.png)
 
 ---
 
@@ -223,7 +223,7 @@ No compilation errors were reported.
 
 ### Compilation Screenshot
 
-![Compilation](screenshots/06_compile.png)
+![Compilation](screenshots/sequential/06_compile.png)
 
 ---
 
@@ -244,7 +244,7 @@ matrix_sequential.c
 
 ### Executable Screenshot
 
-![Executable](screenshots/07_executable.png)
+![Executable](screenshots/sequential/07_executable.png)
 
 ---
 
@@ -275,7 +275,7 @@ Verification C[0][0] = 4000.00
 
 ### Final Execution Result Screenshot
 
-![Final Result](screenshots/08_result.png)
+![Final Result](screenshots/sequential/08_result.png)
 
 ### Result Table
 
