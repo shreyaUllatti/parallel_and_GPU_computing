@@ -87,3 +87,11 @@ The `hostname` command confirmed that the connection was established with the co
 
 <img width="851" height="404" alt="worker1_mpi" src="https://github.com/user-attachments/assets/136b8087-8bfb-46ec-8eb9-eabf7778544e" />
 <img width="736" height="401" alt="worker2_mpi" src="https://github.com/user-attachments/assets/8cf25177-f7b4-44c8-a82c-
+
+### Conclusion
+
+The MPI-based distributed matrix multiplication was successfully implemented using a Master-Worker cluster consisting of one Master VM and three Worker VMs. The Master distributed the matrix computation among multiple MPI processes using MPI_Scatter, broadcast matrix B using MPI_Bcast, and collected the partial results using MPI_Gather.
+
+The successful ping and SSH connectivity tests confirmed communication between the Master and Worker nodes. The matrix multiplication produced the expected result C[0][0] = 4000.00, verifying the correctness of the implementation.
+
+Overall, the experiment demonstrated how MPI enables distributed parallel computation across multiple machines, reducing the computational workload of large matrix operations and providing a foundation for scalable high-performance computing
