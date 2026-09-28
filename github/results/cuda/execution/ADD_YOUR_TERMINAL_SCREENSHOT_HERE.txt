@@ -1,1 +1,0 @@
-Add actual CUDA nvidia-smi/nvcc/execution screenshot here. Only report a runtime if CUDA was actually executed on an NVIDIA GPU.
