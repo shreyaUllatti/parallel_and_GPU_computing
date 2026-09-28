@@ -77,19 +77,14 @@ The OpenMP matrix multiplication program was implemented using C.
 
 The OpenMP library was included using:
 
-```c
 #include <omp.h>
-```
 
 The matrix multiplication was parallelized using:
 
-```c
 #pragma omp parallel for private(j, k)
-```
 
 The complete source code is:
 
-```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
@@ -154,15 +149,14 @@ int main()
 
     return 0;
 }
-```
 
 ### Source Code Screenshot – Part 1
 
-![Source Code Part 1](screenshots/openmp/03_source_code_1.png)
+![Source Code Part 1](screenshots/openmp/04_openmp_source_code_1.png)
 
 ### Source Code Screenshot – Part 2
 
-![Source Code Part 2](screenshots/openmp/04_source_code_2.png)
+![Source Code Part 2](screenshots/openmp/05_openmp_source_code_2.png)
 
 ---
 
@@ -170,37 +164,27 @@ int main()
 
 The experiment was performed inside:
 
-```bash
 ~/parallel_lab/openmp
-```
 
 The directory was created using:
 
-```bash
 mkdir -p ~/parallel_lab/openmp
-```
 
 Then the directory was opened using:
 
-```bash
 cd ~/parallel_lab/openmp
-```
 
 The working directory was verified using:
 
-```bash
 pwd
-```
 
 Output:
 
-```text
 /home/shreya/parallel_lab/openmp
-```
 
 ### Directory Creation Screenshot
 
-![Directory Creation](screenshots/openmp/03_directory.png)
+![Directory Creation](screenshots/openmp/03_openmp_directory.png)
 
 ---
 
@@ -208,43 +192,37 @@ Output:
 
 The GCC compiler version was checked using:
 
-```bash
 gcc --version
-```
 
 The installed compiler was:
 
-```text
 gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
-```
 
 ### GCC Version Screenshot
 
-![GCC Version](screenshots/openmp/02_gcc_version.png)
+![GCC Version](screenshots/openmp/01_nproc.png)
 
 ---
 
 ## 8. Compilation
 
-The OpenMP program was compiled using GCC with optimization level `-O2` and OpenMP support:
+The OpenMP program was compiled using GCC with optimization level -O2 and OpenMP support:
 
-```bash
 gcc -O2 -fopenmp matrix_openmp.c -o matrix_openmp
-```
 
 Here:
 
-- `gcc` is the GNU C compiler.
-- `-O2` enables compiler optimization.
-- `-fopenmp` enables OpenMP support.
-- `matrix_openmp.c` is the source file.
-- `-o matrix_openmp` creates the executable.
+- gcc is the GNU C compiler.
+- -O2 enables compiler optimization.
+- -fopenmp enables OpenMP support.
+- matrix_openmp.c is the source file.
+- -o matrix_openmp creates the executable.
 
 No compilation errors were reported.
 
 ### Compilation Screenshot
 
-![Compilation](screenshots/openmp/05_compile.png)
+![Compilation](screenshots/openmp/06_openmp_compile_and_result.png)
 
 ---
 
@@ -252,22 +230,18 @@ No compilation errors were reported.
 
 The generated executable was verified using:
 
-```bash
 ls -l
-```
 
 The directory contained:
 
-```text
 matrix_openmp
 matrix_openmp.c
-```
 
 This confirmed that the program was compiled successfully.
 
 ### Executable Screenshot
 
-![Executable](screenshots/openmp/06_executable.png)
+![Executable](screenshots/openmp/06_openmp_compile_and_result.png)
 
 ---
 
@@ -275,13 +249,15 @@ This confirmed that the program was compiled successfully.
 
 The program was executed using:
 
-```bash
 ./matrix_openmp
-```
 
 The program initialized two 4000 × 4000 matrices and performed matrix multiplication using OpenMP parallel processing.
 
 The computation was distributed among 8 OpenMP threads.
+
+### OpenMP Threads Screenshot
+
+![OpenMP Threads](screenshots/openmp/02_omp_threads.png)
 
 ---
 
@@ -289,7 +265,6 @@ The computation was distributed among 8 OpenMP threads.
 
 The execution produced:
 
-```text
 Initializing 4000 x 4000 matrices...
 
 OpenMP Matrix Multiplication Completed
@@ -297,11 +272,10 @@ Matrix Size = 4000 x 4000
 Number of Threads Used = 8
 Execution Time = 55.536384 seconds
 Verification C[0][0] = 4000.00
-```
 
 ### Final Execution Result Screenshot
 
-![Final Result](screenshots/openmp/07_result.png)
+![Final Result](screenshots/openmp/06_openmp_compile_and_result.png)
 
 ### Result Table
 
@@ -318,23 +292,17 @@ Verification C[0][0] = 4000.00
 
 ## 12. Verification
 
-Since every element of matrices A and B is initialized to `1.0`:
+Since every element of matrices A and B is initialized to 1.0:
 
-\[
-C[i][j] = 1+1+1+\cdots+1
-\]
+C[i][j] = 1 + 1 + 1 + ... + 1
 
 There are 4000 terms, therefore:
 
-\[
 C[i][j] = 4000
-\]
 
 The program produced:
 
-```text
 Verification C[0][0] = 4000.00
-```
 
 Therefore, the matrix multiplication result is correct.
 
@@ -346,9 +314,7 @@ For an N × N matrix multiplication, the OpenMP algorithm uses three nested loop
 
 Therefore, the time complexity is:
 
-\[
 O(N^3)
-\]
 
 For N = 4000, a very large number of multiplication and addition operations are required.
 
@@ -360,7 +326,7 @@ OpenMP does not change the algorithmic complexity. Instead, it improves the prac
 
 The OpenMP implementation executes matrix multiplication using multiple CPU threads.
 
-The `parallel for` directive distributes the iterations of the outer loop among the available OpenMP threads.
+The parallel for directive distributes the iterations of the outer loop among the available OpenMP threads.
 
 For the 4000 × 4000 matrix:
 
@@ -386,19 +352,11 @@ The OpenMP implementation took:
 
 The speedup is calculated as:
 
-\[
-Speedup =
-\frac{Sequential\ Time}{OpenMP\ Time}
-\]
+Speedup = Sequential Time / OpenMP Time
 
-\[
-Speedup =
-\frac{97.230285}{55.536384}
-\]
+Speedup = 97.230285 / 55.536384
 
-\[
-Speedup \approx 1.75
-\]
+Speedup ≈ 1.75
 
 Therefore, the OpenMP implementation achieved approximately **1.75× speedup** compared with the sequential implementation.
 
