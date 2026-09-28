@@ -2,6 +2,28 @@
 
 This folder contains an MPI distributed-memory matrix multiplication implementation based on the same 4000 x 4000 workload used in the reference project.
 
+### Aim
+
+To implement and study distributed-memory matrix multiplication using MPI by dividing the computation among multiple processes running on a master-worker cluster.
+
+### Objectives
+
+1.To understand the fundamentals of MPI (Message Passing Interface) and distributed-memory parallel computing.
+
+2.To configure communication between a Master VM and multiple Worker VMs using MPI.
+
+3.To implement 4000 × 4000 matrix multiplication using MPI.
+
+4.To use MPI communication functions such as MPI_Scatter, MPI_Bcast, and MPI_Gather for distributing and collecting data.
+
+5.To compile and execute the MPI program using multiple processes with mpirun.
+
+6.To verify successful communication between the Master and Worker nodes using ping and SSH.
+
+7.To compare the performance of MPI-based matrix multiplication with sequential and OpenMP implementations.
+
+8.To analyze the execution time and speedup achieved through distributed parallel processing.
+
 ## Files
 - `mpimatrix.c` - distributed matrix multiplication
 - `sendandreceive.c` - MPI point-to-point communication test
