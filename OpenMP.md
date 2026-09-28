@@ -69,8 +69,6 @@ Hence, the expected verification value is:
 | Number of Threads | 8 |
 | Optimization | `-O2` |
 
----
-
 ## 5. Source Code
 
 The OpenMP matrix multiplication program was implemented using C.
@@ -386,3 +384,6 @@ Compared with the sequential execution time of **97.230285 seconds**, OpenMP ach
 Therefore, parallel processing using OpenMP improves the execution performance of large matrix multiplication compared with sequential CPU execution.
 
 The experiment was completed successfully with the expected verification value.
+---
+
+
