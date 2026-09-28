@@ -1,16 +1,73 @@
-# PART A - Sequential Matrix Multiplication
+# Sequential Matrix Multiplication
 
-## 1. Introduction
+## 1. Aim
 
-The Sequential implementation is used as the baseline for comparing the performance of parallel matrix multiplication approaches.
+To implement matrix multiplication using sequential CPU processing and measure the execution time for a large matrix.
 
-The experiment performs matrix multiplication of two 4000 × 4000 matrices using sequential CPU execution.
+---
 
-## 2. Sequential Matrix Multiplication Program
+## 2. Objective
 
-The Sequential matrix multiplication program was implemented in C using three nested loops for matrix multiplication.
+The objective of this experiment is to:
 
-The program uses a matrix size of 4000 × 4000.
+- Implement matrix multiplication using C.
+- Execute the computation sequentially on the CPU.
+- Measure the execution time.
+- Verify the correctness of the result.
+- Use the sequential implementation as the baseline for comparison with OpenMP, MPI and CUDA.
+
+---
+
+## 3. Problem Statement
+
+Matrix multiplication is a computationally intensive operation.
+
+For two matrices A and B:
+
+\[
+C = A \times B
+\]
+
+Each element of matrix C is calculated as:
+
+\[
+C[i][j] = \sum_{k=0}^{N-1} A[i][k] \times B[k][j]
+\]
+
+For this experiment:
+
+- Matrix A = 4000 × 4000
+- Matrix B = 4000 × 4000
+- Matrix C = 4000 × 4000
+- All elements of A = 1.0
+- All elements of B = 1.0
+
+Therefore:
+
+\[
+C[i][j] = 4000
+\]
+
+Hence, the expected verification value is:
+
+`C[0][0] = 4000.00`
+
+---
+
+## 4. Environment
+
+| Component | Configuration |
+|---|---|
+| Operating System | Ubuntu on WSL2 |
+| Compiler | GCC |
+| GCC Version | 15.2.0 |
+| Language | C |
+| Matrix Size | 4000 × 4000 |
+| Optimization | `-O2` |
+
+---
+
+## 5. Source Code
 
 ```c
 #include <stdio.h>
@@ -56,7 +113,8 @@ int main()
             for (k = 0; k < N; k++)
             {
                 C[i * N + j] +=
-                    A[i * N + k] * B[k * N + j];
+                    A[i * N + k] *
+                    B[k * N + j];
             }
         }
     }
@@ -76,12 +134,188 @@ int main()
     return 0;
 }
 ```
-## 3. Working and Output
 
-The Sequential matrix multiplication program was created, compiled, and executed successfully. The output was verified for the 4000 × 4000 matrix.
+---
 
-<img width="880" height="252" alt="sequential_olp" src="https://github.com/user-attachments/assets/4f112442-c2f8-46e4-a04a-1c5d3599150a" />
+## 6. Creating the Experiment Directory
 
-## 4. Result
+The experiment was performed inside:
 
-The Sequential matrix multiplication completed successfully with the expected verification value.
+```bash
+~/parallel_lab/sequential
+```
+
+The directory was created using:
+
+```bash
+mkdir -p ~/parallel_lab/sequential
+```
+
+Then:
+
+```bash
+cd ~/parallel_lab/sequential
+```
+
+The working directory was verified using:
+
+```bash
+pwd
+```
+
+Output:
+
+```text
+/home/shreya/parallel_lab/sequential
+```
+
+---
+
+## 7. Checking GCC
+
+The GCC compiler version was checked using:
+
+```bash
+gcc --version
+```
+
+The installed compiler was:
+
+```text
+gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+```
+
+---
+
+## 8. Compilation
+
+The C program was compiled using GCC with optimization level `-O2`:
+
+```bash
+gcc -O2 matrix_sequential.c -o matrix_sequential
+```
+
+No compilation errors were reported.
+
+---
+
+## 9. Checking the Executable
+
+The generated executable was verified using:
+
+```bash
+ls -l
+```
+
+The directory contained:
+
+```text
+matrix_sequential
+matrix_sequential.c
+```
+
+---
+
+## 10. Execution
+
+The program was executed using:
+
+```bash
+./matrix_sequential
+```
+
+The program initialized two 4000 × 4000 matrices and performed sequential matrix multiplication.
+
+---
+
+## 11. Result
+
+The execution produced:
+
+```text
+Initializing 4000 x 4000 matrices...
+
+Sequential Matrix Multiplication Completed
+Matrix Size = 4000 x 4000
+Execution Time = 97.230285 seconds
+Verification C[0][0] = 4000.00
+```
+
+### Result Table
+
+| Parameter | Result |
+|---|---:|
+| Matrix Size | 4000 × 4000 |
+| Execution Model | Sequential CPU |
+| Execution Time | **97.230285 seconds** |
+| Verification | **4000.00** |
+| Status | Successful |
+
+---
+
+## 12. Verification
+
+Since every element of matrices A and B is initialized to `1.0`:
+
+\[
+C[i][j] =
+1+1+1+\cdots+1
+\]
+
+There are 4000 terms, therefore:
+
+\[
+C[i][j] = 4000
+\]
+
+The program produced:
+
+```text
+Verification C[0][0] = 4000.00
+```
+
+Therefore, the matrix multiplication result is correct.
+
+---
+
+## 13. Complexity
+
+For an N × N matrix multiplication, the sequential algorithm uses three nested loops.
+
+Therefore, the time complexity is:
+
+\[
+O(N^3)
+\]
+
+For N = 4000, a very large number of multiplication and addition operations are required.
+
+---
+
+## 14. Observation
+
+The sequential implementation executes all matrix multiplication operations using the CPU without parallel processing.
+
+Therefore, it requires significantly more execution time for a large matrix.
+
+The measured execution time was:
+
+**97.230285 seconds**
+
+This value will be used as the baseline for calculating the speedup of OpenMP, MPI and CUDA implementations.
+
+---
+
+## 15. Conclusion
+
+The sequential matrix multiplication program was successfully implemented and executed using C and GCC on Ubuntu through WSL2.
+
+For a 4000 × 4000 matrix, the execution time was:
+
+**97.230285 seconds**
+
+The result was verified successfully with:
+
+**C[0][0] = 4000.00**
+
+This sequential implementation provides the baseline for comparing the performance of parallel approaches such as OpenMP, MPI and CUDA.completed successfully with the expected verification value.
